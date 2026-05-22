@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arm Nerve Simulation</title>
+    <title>Advanced Arm Nerve Simulation — Research-Informed</title>
     <style>
         * {
             margin: 0;
@@ -151,6 +151,195 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0a1420; }
         ::-webkit-scrollbar-thumb { background: #2a4a6a; border-radius: 3px; }
+    
+
+        /* === Advanced upgrade layer: research-informed education, responsive UX, accessibility === */
+        :root {
+            --accent: #66ccff;
+            --accent-2: #44ffcc;
+            --warn: #ffcc66;
+            --danger: #ff6677;
+            --panel: #0d1a2a;
+            --panel-2: #0a1420;
+            --line: #1a3355;
+            --text-soft: #9fb6c9;
+        }
+        body.high-contrast {
+            background: #000;
+            color: #fff;
+        }
+        body.high-contrast .panel,
+        body.high-contrast .info-box,
+        body.high-contrast .signal-info,
+        body.high-contrast canvas {
+            border-color: #78d9ff;
+        }
+        .app-subtitle {
+            color: var(--text-soft);
+            font-size: .82rem;
+            margin-bottom: 8px;
+            text-align: center;
+            max-width: 980px;
+            line-height: 1.45;
+        }
+        .upgrade-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            padding: 0 10px 8px;
+        }
+        .upgrade-badge {
+            background: rgba(102,204,255,.08);
+            border: 1px solid rgba(102,204,255,.28);
+            color: #cdefff;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: .72rem;
+        }
+        .advanced-card {
+            background: linear-gradient(180deg, rgba(16,32,50,.92), rgba(8,18,30,.92));
+            border: 1px solid #1d4468;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,.18);
+        }
+        .advanced-card strong {
+            color: #dff6ff;
+        }
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0,1fr));
+            gap: 6px;
+            margin-top: 8px;
+        }
+        .metric-tile {
+            background: rgba(0,0,0,.22);
+            border: 1px solid rgba(102,204,255,.16);
+            border-radius: 8px;
+            padding: 7px;
+            font-size: .75rem;
+        }
+        .metric-tile span {
+            display: block;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: .92rem;
+        }
+        .search-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 6px;
+            margin: 8px 0;
+        }
+        .search-row input,
+        .advanced-card select,
+        .advanced-card input[type="range"],
+        .advanced-card textarea {
+            width: 100%;
+            background: #111f30;
+            border: 1px solid #2a4a6a;
+            color: #d8efff;
+            border-radius: 7px;
+            padding: 7px;
+            font-size: .8rem;
+        }
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 6px;
+        }
+        .chip {
+            border: 1px solid rgba(102,204,255,.24);
+            background: rgba(102,204,255,.08);
+            color: #cfefff;
+            border-radius: 999px;
+            padding: 3px 7px;
+            font-size: .7rem;
+            cursor: pointer;
+            user-select: none;
+        }
+        .chip:hover { background: rgba(102,204,255,.18); }
+        .timeline {
+            max-height: 130px;
+            overflow-y: auto;
+            margin-top: 7px;
+            border-left: 2px solid rgba(102,204,255,.28);
+            padding-left: 8px;
+            color: #9fb6c9;
+            font-size: .72rem;
+            line-height: 1.45;
+        }
+        .timeline div {
+            margin: 4px 0;
+        }
+        .risk-low { color: #66ffbb; }
+        .risk-mid { color: #ffcc66; }
+        .risk-high { color: #ff6677; }
+        .quiz-option {
+            width: 100%;
+            text-align: left;
+            margin: 4px 0;
+            padding: 7px;
+            border-radius: 7px;
+            border: 1px solid #2a4a6a;
+            background: #101f30;
+            color: #d7ecff;
+            cursor: pointer;
+        }
+        .quiz-option:hover { background:#17314a; }
+        .reference-list {
+            font-size: .72rem;
+            color: #9fb6c9;
+            line-height: 1.45;
+            padding-left: 14px;
+        }
+        .reference-list a { color: #9be0ff; }
+        .floating-help {
+            position: fixed;
+            right: 14px;
+            bottom: 14px;
+            z-index: 10;
+            background: rgba(8,18,30,.92);
+            border: 1px solid #1d4468;
+            color: #dff6ff;
+            padding: 8px 10px;
+            border-radius: 999px;
+            font-size: .75rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,.25);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+        @media (max-width: 1160px) {
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .panel {
+                max-height: none;
+                max-width: none;
+            }
+            canvas {
+                width: 100%;
+                height: auto;
+                align-self: center;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            canvas { scroll-behavior: auto; }
+        }
+
     </style>
 </head>
 <body>
@@ -1459,6 +1648,644 @@
         `;
         
         requestAnimationFrame(render);
+    
+
+        // === Advanced upgrade layer: new features while keeping the original simulation intact ===
+        const researchUpgrade = {
+            version: "v2.0 research-informed upgrade",
+            notes: [
+                "Educational simulation only — not a diagnosis tool.",
+                "Brachial plexus organisation is roots → trunks → divisions → cords → terminal branches.",
+                "Electrodiagnostic thinking separates demyelinating/slowed conduction from axonal/amplitude loss.",
+                "Modern entrapment workups increasingly combine history, exam, nerve conduction/EMG and ultrasound where appropriate."
+            ]
+        };
+
+        const advancedNerveMeta = {
+            musculocutaneous: {
+                mnemonic: "Elbow flexion + lateral forearm sensation",
+                tests: ["Biceps reflex C5-C6", "Elbow flexion strength", "Forearm supination strength"],
+                redFlags: ["Rapid weakness", "New widespread numbness", "Trauma with loss of function"],
+                lesionPatterns: ["Weak elbow flexion", "Weak supination", "Reduced lateral forearm sensation"],
+                rehabConcepts: ["Protect the nerve from repeated traction", "Progressive strengthening after clinician review", "Map sensory change over time"]
+            },
+            median: {
+                mnemonic: "LOAF thenar muscles + lateral palm digits",
+                tests: ["Phalen/Tinel at carpal tunnel", "Thumb opposition", "Two-point discrimination in index finger"],
+                redFlags: ["Thenar wasting", "Night numbness becoming constant", "Weak pinch/grip"],
+                lesionPatterns: ["Carpal tunnel symptoms", "Ape-hand pattern in severe lesions", "Hand of benediction with high lesion"],
+                rehabConcepts: ["Neutral wrist ergonomics", "Avoid prolonged wrist flexion/compression", "Clinician-guided nerve/tendon glides if appropriate"]
+            },
+            ulnar: {
+                mnemonic: "Intrinsics + medial 1½ fingers",
+                tests: ["Froment sign", "Finger ab/adduction", "Tinel at cubital tunnel/Guyon's canal"],
+                redFlags: ["Interosseous wasting", "Clawing", "Progressive numbness in ring/little fingers"],
+                lesionPatterns: ["Cubital tunnel symptoms", "Guyon's canal pattern", "Ulnar claw in distal lesions"],
+                rehabConcepts: ["Avoid prolonged elbow flexion", "Night elbow-position awareness", "Gentle gliding only if it does not worsen symptoms"]
+            },
+            radial: {
+                mnemonic: "Wrist/finger extension + dorsal radial hand",
+                tests: ["Wrist extension", "Finger extension", "Sensation over first dorsal web space"],
+                redFlags: ["Wrist drop after trauma/compression", "Loss of finger extension", "Humeral shaft fracture history"],
+                lesionPatterns: ["Saturday-night palsy", "Posterior interosseous motor syndrome", "Spiral groove lesion"],
+                rehabConcepts: ["Splinting may protect function", "Monitor recovery of extension", "Avoid repeated compression at spiral groove"]
+            },
+            axillary: {
+                mnemonic: "Deltoid + regimental badge area",
+                tests: ["Shoulder abduction 15-90°", "External rotation with teres minor", "Sensation over lateral shoulder"],
+                redFlags: ["Shoulder dislocation/fracture with numb badge area", "Deltoid wasting", "Inability to abduct shoulder"],
+                lesionPatterns: ["Post-dislocation palsy", "Surgical neck fracture risk", "Quadrangular space syndrome"],
+                rehabConcepts: ["Protect shoulder after trauma", "Restore range before loaded strengthening", "Escalate if weakness persists"]
+            },
+            medialCutaneous: {
+                mnemonic: "Pure sensory medial arm/forearm",
+                tests: ["Light touch mapping", "Pinprick comparison", "Check medial cord pattern"],
+                redFlags: ["Numbness extending beyond one cutaneous branch", "Associated hand intrinsic weakness", "New neck/plexus pain"],
+                lesionPatterns: ["Medial arm/forearm numbness", "Medial cord involvement", "Sensory-only irritation"],
+                rehabConcepts: ["Symptom diary", "Avoid sustained compression", "Compare side-to-side sensation"]
+            }
+        };
+
+        const lesionPresets = {
+            carpalTunnel: {
+                title: "Carpal tunnel — median nerve at wrist",
+                nerve: "median",
+                zone: {x: 365, y: 660},
+                level: "Distal wrist",
+                sensory: "Thumb, index, middle, radial half of ring finger; often worse at night.",
+                motor: "Thenar weakness/opposition changes if advanced.",
+                evidence: "NCS/EMG can detect slowed conduction across the carpal tunnel; ultrasound is also used in modern assessment.",
+                defaultSeverity: 55
+            },
+            cubitalTunnel: {
+                title: "Cubital tunnel — ulnar nerve at elbow",
+                nerve: "ulnar",
+                zone: {x: 414, y: 438},
+                level: "Medial elbow",
+                sensory: "Ring/little finger tingling or numbness.",
+                motor: "Finger ab/adduction weakness, grip/pinch weakness if advanced.",
+                evidence: "Education often targets avoiding prolonged elbow flexion/compression; gliding may be considered by clinicians.",
+                defaultSeverity: 45
+            },
+            radialGroove: {
+                title: "Spiral groove — radial nerve",
+                nerve: "radial",
+                zone: {x: 430, y: 230},
+                level: "Posterior humerus",
+                sensory: "Dorsal radial hand/forearm changes vary by level.",
+                motor: "Wrist/finger extension weakness; classic wrist drop.",
+                evidence: "Trauma or compression at the humeral shaft/spiral groove can produce radial palsy patterns.",
+                defaultSeverity: 50
+            },
+            axillaryTrauma: {
+                title: "Axillary nerve — shoulder dislocation/fracture risk",
+                nerve: "axillary",
+                zone: {x: 460, y: 155},
+                level: "Surgical neck/quadrangular space",
+                sensory: "Lateral shoulder 'regimental badge' area.",
+                motor: "Deltoid weakness; shoulder abduction from 15-90° affected.",
+                evidence: "Clinical check after shoulder trauma should include deltoid function and lateral shoulder sensation.",
+                defaultSeverity: 60
+            },
+            upperTrunk: {
+                title: "Upper trunk C5-C6 pattern",
+                nerve: "musculocutaneous",
+                zone: {x: 320, y: 68},
+                level: "Brachial plexus upper trunk",
+                sensory: "Lateral arm/forearm distribution may be involved.",
+                motor: "Shoulder abduction/external rotation and elbow flexion may be affected.",
+                evidence: "Root/trunk-level lesions affect multiple terminal nerves, not just one distal nerve.",
+                defaultSeverity: 50
+            },
+            lowerTrunk: {
+                title: "Lower trunk C8-T1 pattern",
+                nerve: "ulnar",
+                zone: {x: 412, y: 68},
+                level: "Brachial plexus lower trunk",
+                sensory: "Medial forearm/hand changes.",
+                motor: "Hand intrinsic weakness can dominate.",
+                evidence: "Lower plexus patterns can resemble ulnar lesions but often include broader C8-T1 signs.",
+                defaultSeverity: 50
+            }
+        };
+
+        const fiberProfiles = {
+            "Aα proprioception": {speed: 100, role: "Proprioception and motor alpha fibers", myelin: "large, heavily myelinated"},
+            "Aβ touch": {speed: 55, role: "Touch and pressure", myelin: "myelinated"},
+            "Aδ fast pain/temp": {speed: 18, role: "Fast pain and temperature", myelin: "thinly myelinated"},
+            "C slow pain/itch": {speed: 1.2, role: "Slow pain, warmth and itch", myelin: "unmyelinated"}
+        };
+
+        const quizBank = [
+            {q: "Which nerve is most associated with carpal tunnel syndrome?", a: "Median nerve", options: ["Median nerve", "Ulnar nerve", "Radial nerve", "Axillary nerve"]},
+            {q: "Which nerve causes classic wrist drop when injured?", a: "Radial nerve", options: ["Median nerve", "Ulnar nerve", "Radial nerve", "Musculocutaneous nerve"]},
+            {q: "The brachial plexus roots are usually:", a: "C5 to T1", options: ["C1 to C4", "C5 to T1", "T2 to T8", "L2 to S1"]},
+            {q: "Which nerve supplies the deltoid and lateral shoulder sensation?", a: "Axillary nerve", options: ["Ulnar nerve", "Median nerve", "Axillary nerve", "Medial cutaneous nerve"]},
+            {q: "Which fiber type is typically fastest?", a: "Aα", options: ["C", "Aδ", "Aβ", "Aα"]},
+            {q: "Froment's sign points toward weakness of which nerve?", a: "Ulnar nerve", options: ["Ulnar nerve", "Radial nerve", "Median nerve", "Axillary nerve"]}
+        ];
+
+        let lesionState = { presetKey: "", severity: 0, nerve: null, zone: null };
+        let advancedTimeline = [];
+        let reducedMotion = false;
+        let currentQuiz = null;
+
+        function addUpgradeChrome() {
+            const h1 = document.querySelector('h1');
+            if (h1) {
+                h1.textContent = "🧠 Advanced Arm Nervous System Simulation";
+                h1.insertAdjacentHTML('afterend', `
+                    <div class="app-subtitle">
+                        Interactive brachial plexus and arm-nerve lab with signal animation, lesion presets, conduction timing, clinical pattern teaching and quiz mode.
+                    </div>
+                    <div class="upgrade-badge-row" aria-label="Upgrade features">
+                        <span class="upgrade-badge">Preserves original canvas simulation</span>
+                        <span class="upgrade-badge">Clinical pattern lens</span>
+                        <span class="upgrade-badge">Conduction calculator</span>
+                        <span class="upgrade-badge">Lesion/compression overlays</span>
+                        <span class="upgrade-badge">Quiz + export notes</span>
+                    </div>
+                `);
+            }
+
+            document.body.insertAdjacentHTML('beforeend', `<div class="floating-help">Keys: F finder · R reflex · S sensory · H contrast</div>`);
+        }
+
+        function addAdvancedPanels() {
+            const left = document.getElementById('leftPanel');
+            const right = document.getElementById('rightPanel');
+            if (!left || !right) return;
+
+            left.insertAdjacentHTML('beforeend', `
+                <h3>Smart Nerve Finder</h3>
+                <div class="advanced-card">
+                    <label class="sr-only" for="nerveSearch">Search nerve, root, symptom or test</label>
+                    <div class="search-row">
+                        <input id="nerveSearch" placeholder="Search: median, C8, wrist drop, Froment..." autocomplete="off">
+                        <button id="clearSearch" type="button">Clear</button>
+                    </div>
+                    <div id="smartFinderResults" class="info-box">Type a nerve, root, symptom, test, or clinical sign to highlight likely structures.</div>
+                    <div class="chip-row" id="quickChips"></div>
+                </div>
+
+                <h3>Selected Nerve Clinical Lens</h3>
+                <div class="advanced-card" id="clinicalLens">
+                    Select a nerve to show tests, red flags, and learning cues.
+                </div>
+
+                <h3>Evidence Notes</h3>
+                <div class="advanced-card">
+                    <ul class="reference-list">
+                        <li>Brachial plexus terminal branches: musculocutaneous, median, ulnar, axillary and radial.</li>
+                        <li>NCS/EMG helps distinguish demyelinating slowing from axonal amplitude loss.</li>
+                        <li>For entrapment, ultrasound is increasingly used alongside clinical exam and electrodiagnostic testing.</li>
+                    </ul>
+                    <small>Education only; symptoms, weakness, trauma, spreading numbness or worsening pain should be checked by a qualified clinician.</small>
+                </div>
+            `);
+
+            right.insertAdjacentHTML('beforeend', `
+                <h3>Compression / Lesion Simulator</h3>
+                <div class="advanced-card">
+                    <label for="lesionPreset">Preset:</label>
+                    <select id="lesionPreset">
+                        <option value="">None</option>
+                        <option value="carpalTunnel">Carpal tunnel — median nerve</option>
+                        <option value="cubitalTunnel">Cubital tunnel — ulnar nerve</option>
+                        <option value="radialGroove">Spiral groove — radial nerve</option>
+                        <option value="axillaryTrauma">Axillary nerve trauma</option>
+                        <option value="upperTrunk">Upper trunk C5-C6</option>
+                        <option value="lowerTrunk">Lower trunk C8-T1</option>
+                    </select>
+                    <label>Severity: <span id="lesionSeverityVal">0</span>%</label>
+                    <input type="range" id="lesionSeverity" min="0" max="100" value="0">
+                    <div class="btn-row">
+                        <button id="applyLesion" type="button">Apply Overlay</button>
+                        <button id="runLesionSignal" type="button">Run Affected Signal</button>
+                    </div>
+                    <div class="signal-info" id="lesionOutput">Choose a preset to model slowed conduction, sensory territory and motor signs.</div>
+                </div>
+
+                <h3>Conduction Timing Lab</h3>
+                <div class="advanced-card">
+                    <label for="fiberType">Fiber profile:</label>
+                    <select id="fiberType"></select>
+                    <label>Path distance: <span id="distanceVal">0.80</span> m</label>
+                    <input type="range" id="pathDistance" min="0.10" max="1.20" step="0.01" value="0.80">
+                    <div class="mini-grid">
+                        <div class="metric-tile">Latency estimate<span id="latencyMetric">16 ms</span></div>
+                        <div class="metric-tile">Velocity<span id="velocityMetric">50 m/s</span></div>
+                        <div class="metric-tile">Fiber role<span id="fiberRole">Touch</span></div>
+                        <div class="metric-tile">Myelin<span id="myelinMetric">myelinated</span></div>
+                    </div>
+                    <small>Latency = distance / conduction velocity. This is a teaching approximation, not a clinical measurement.</small>
+                </div>
+
+                <h3>Learning / Quiz Mode</h3>
+                <div class="advanced-card">
+                    <div id="quizQuestion">Press “New Question” to test nerve anatomy.</div>
+                    <div id="quizOptions"></div>
+                    <div class="btn-row">
+                        <button id="newQuiz" type="button">New Question</button>
+                        <button id="showMnemonic" type="button">Show Mnemonic</button>
+                    </div>
+                    <div id="quizFeedback" class="signal-info">Quiz feedback appears here.</div>
+                </div>
+
+                <h3>Session Tools</h3>
+                <div class="advanced-card">
+                    <div class="btn-row">
+                        <button id="copyCaseNote" type="button">Copy Case Note</button>
+                        <button id="downloadCaseNote" type="button">Download JSON</button>
+                    </div>
+                    <div class="btn-row">
+                        <button id="toggleContrast" type="button">High Contrast</button>
+                        <button id="toggleReducedMotion" type="button">Reduce Motion</button>
+                    </div>
+                    <div class="timeline" id="advancedTimeline">
+                        <div>Session log ready.</div>
+                    </div>
+                </div>
+            `);
+        }
+
+        function buildQuickChips() {
+            const chips = ["median", "ulnar", "radial", "axillary", "C5", "C8", "wrist drop", "carpal tunnel", "Froment", "deltoid"];
+            const container = document.getElementById('quickChips');
+            if (!container) return;
+            container.innerHTML = chips.map(chip => `<span class="chip" data-chip="${chip}">${chip}</span>`).join('');
+            container.querySelectorAll('.chip').forEach(chip => chip.addEventListener('click', () => {
+                const input = document.getElementById('nerveSearch');
+                input.value = chip.dataset.chip;
+                runSmartFinder(chip.dataset.chip);
+            }));
+        }
+
+        function selectedNerveName() {
+            return selectedNerve && nerves[selectedNerve] ? nerves[selectedNerve].name : "None";
+        }
+
+        function addTimeline(text) {
+            const stamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', second: '2-digit'});
+            advancedTimeline.unshift(`${stamp} — ${text}`);
+            advancedTimeline = advancedTimeline.slice(0, 12);
+            const el = document.getElementById('advancedTimeline');
+            if (el) el.innerHTML = advancedTimeline.map(item => `<div>${item}</div>`).join('');
+        }
+
+        function riskClass(severity) {
+            if (severity >= 70) return "risk-high";
+            if (severity >= 35) return "risk-mid";
+            return "risk-low";
+        }
+
+        function updateClinicalLens(key = selectedNerve) {
+            const el = document.getElementById('clinicalLens');
+            if (!el) return;
+            if (!key || !nerves[key]) {
+                el.innerHTML = "Select a nerve to show tests, red flags, and learning cues.";
+                return;
+            }
+            const nerve = nerves[key];
+            const meta = advancedNerveMeta[key];
+            el.innerHTML = `
+                <strong style="color:${nerve.color}">${nerve.name}</strong>
+                <div class="mini-grid">
+                    <div class="metric-tile">Roots<span>${nerve.roots}</span></div>
+                    <div class="metric-tile">Velocity<span>${nerve.velocity}</span></div>
+                </div>
+                <p><strong>Mnemonic:</strong> ${meta.mnemonic}</p>
+                <p><strong>Clinical tests:</strong> ${meta.tests.join("; ")}</p>
+                <p><strong>Pattern clues:</strong> ${meta.lesionPatterns.join("; ")}</p>
+                <p><strong>Escalate/check:</strong> ${meta.redFlags.join("; ")}</p>
+                <p><strong>Rehab concept:</strong> ${meta.rehabConcepts.join("; ")}</p>
+            `;
+        }
+
+        function runSmartFinder(raw) {
+            const query = (raw || "").toLowerCase().trim();
+            const output = document.getElementById('smartFinderResults');
+            const labels = document.querySelectorAll('#nerveLegend .nerve-label');
+            labels.forEach(label => label.style.display = "");
+
+            if (!query) {
+                if (output) output.textContent = "Type a nerve, root, symptom, test, or clinical sign to highlight likely structures.";
+                return;
+            }
+
+            const hits = [];
+            for (const [key, nerve] of Object.entries(nerves)) {
+                const meta = advancedNerveMeta[key];
+                const haystack = [
+                    key, nerve.name, nerve.roots, nerve.cord, nerve.motor, nerve.sensory, nerve.clinical,
+                    meta.mnemonic, meta.tests.join(" "), meta.lesionPatterns.join(" "), meta.redFlags.join(" ")
+                ].join(" ").toLowerCase();
+
+                if (haystack.includes(query)) hits.push(key);
+            }
+
+            labels.forEach((label, idx) => {
+                const key = Object.keys(nerves)[idx];
+                label.style.display = hits.length === 0 || hits.includes(key) ? "" : "none";
+            });
+
+            if (hits.length) {
+                selectedNerve = hits[0];
+                updateClinicalLens(hits[0]);
+                const names = hits.map(k => `<span style="color:${nerves[k].color}">${nerves[k].name}</span>`).join(", ");
+                output.innerHTML = `<strong>${hits.length} match${hits.length > 1 ? "es" : ""}:</strong> ${names}. Click a nerve or run a signal to explore.`;
+                addTimeline(`Finder matched ${hits.map(k => nerves[k].name).join(", ")}`);
+            } else {
+                output.innerHTML = `<span class="risk-mid">No exact match.</span> Try a root like C7, a symptom like wrist drop, or a nerve name.`;
+            }
+        }
+
+        function updateLesionUI() {
+            const presetKey = document.getElementById('lesionPreset')?.value || "";
+            const severity = parseInt(document.getElementById('lesionSeverity')?.value || "0", 10);
+            const val = document.getElementById('lesionSeverityVal');
+            if (val) val.textContent = severity;
+            const output = document.getElementById('lesionOutput');
+
+            if (!presetKey || !lesionPresets[presetKey]) {
+                lesionState = { presetKey: "", severity: 0, nerve: null, zone: null };
+                if (output) output.innerHTML = "Choose a preset to model slowed conduction, sensory territory and motor signs.";
+                return;
+            }
+
+            const preset = lesionPresets[presetKey];
+            lesionState = { presetKey, severity, nerve: preset.nerve, zone: preset.zone };
+            selectedNerve = preset.nerve;
+            updateClinicalLens(preset.nerve);
+
+            const baseSpeed = parseInt(document.getElementById('signalSpeed').value || "50", 10);
+            const slowed = Math.max(1, baseSpeed * (1 - severity / 100 * 0.68));
+            const amplitude = Math.max(5, 100 - severity * 0.78);
+            const klass = riskClass(severity);
+            if (output) {
+                output.innerHTML = `
+                    <strong>${preset.title}</strong><br>
+                    Level: ${preset.level}<br>
+                    Sensory: ${preset.sensory}<br>
+                    Motor: ${preset.motor}<br>
+                    Model: speed ${slowed.toFixed(1)} m/s, amplitude ${amplitude.toFixed(0)}%<br>
+                    <span class="${klass}">Severity band: ${severity < 35 ? "mild teaching overlay" : severity < 70 ? "moderate teaching overlay" : "severe teaching overlay"}</span><br>
+                    <small>${preset.evidence}</small>
+                `;
+            }
+        }
+
+        function drawLesionOverlay() {
+            if (!lesionState.nerve || !lesionState.zone || lesionState.severity <= 0) return;
+            const preset = lesionPresets[lesionState.presetKey];
+            const zone = lesionState.zone;
+            const r = 12 + lesionState.severity * 0.35;
+            ctx.save();
+            ctx.setLineDash([6, 4]);
+            ctx.strokeStyle = lesionState.severity >= 70 ? 'rgba(255,90,110,.95)' : 'rgba(255,205,90,.9)';
+            ctx.lineWidth = 2.5;
+            ctx.shadowColor = ctx.strokeStyle;
+            ctx.shadowBlur = 18;
+            ctx.beginPath();
+            ctx.arc(zone.x, zone.y, r, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = 'rgba(255,255,255,.92)';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.fillText(`${lesionState.severity}%`, zone.x - 12, zone.y + 4);
+            if (layers.labels && preset) {
+                ctx.fillStyle = 'rgba(255,220,140,.95)';
+                ctx.font = '10px sans-serif';
+                ctx.fillText(preset.level, zone.x + r + 6, zone.y + 3);
+            }
+            ctx.restore();
+        }
+
+        const originalRenderLayerDrawNerve = drawNerve;
+        drawNerve = function upgradedDrawNerve(nerve, key) {
+            originalRenderLayerDrawNerve(nerve, key);
+            if (lesionState.nerve === key && lesionState.severity > 0) {
+                // overlay is drawn once per affected nerve to keep the lesion visually tied to the structure
+                drawLesionOverlay();
+            }
+        };
+
+        const originalBackgroundActivity = drawBackgroundActivity;
+        drawBackgroundActivity = function upgradedBackgroundActivity() {
+            if (!reducedMotion) originalBackgroundActivity();
+        };
+
+        const originalSetView = setView;
+        setView = function upgradedSetView(mode) {
+            viewMode = mode;
+            ["Anatomical", "Dermatome", "Myotome", "Cross"].forEach(name => {
+                const btn = document.getElementById('btn' + name);
+                if (btn) btn.classList.remove('active');
+            });
+            const id = mode === "cross" ? "btnCross" : "btn" + mode.charAt(0).toUpperCase() + mode.slice(1);
+            const btn = document.getElementById(id);
+            if (btn) btn.classList.add('active');
+            addTimeline(`View changed to ${mode}`);
+        };
+        window.setView = setView;
+
+        const originalSelectNerve = selectNerve;
+        selectNerve = function upgradedSelectNerve(key) {
+            originalSelectNerve(key);
+            updateClinicalLens(selectedNerve || key);
+            addTimeline(`Selected ${nerves[key]?.name || key}`);
+        };
+        window.selectNerve = selectNerve;
+
+        const originalTriggerFullSignal = triggerFullSignal;
+        triggerFullSignal = function upgradedTriggerFullSignal() {
+            originalTriggerFullSignal();
+            addTimeline("Full motor signal launched");
+        };
+        window.triggerFullSignal = triggerFullSignal;
+
+        const originalTriggerSensory = triggerSensory;
+        triggerSensory = function upgradedTriggerSensory() {
+            originalTriggerSensory();
+            addTimeline("Sensory signal launched");
+        };
+        window.triggerSensory = triggerSensory;
+
+        const originalTriggerReflex = triggerReflex;
+        triggerReflex = function upgradedTriggerReflex() {
+            originalTriggerReflex();
+            addTimeline("Reflex arc launched");
+        };
+        window.triggerReflex = triggerReflex;
+
+        const originalResetSignals = resetSignals;
+        resetSignals = function upgradedResetSignals() {
+            originalResetSignals();
+            lesionState = { presetKey: "", severity: 0, nerve: null, zone: null };
+            const preset = document.getElementById('lesionPreset');
+            const sev = document.getElementById('lesionSeverity');
+            if (preset) preset.value = "";
+            if (sev) sev.value = 0;
+            updateLesionUI();
+            addTimeline("Signals and lesion overlay reset");
+        };
+        window.resetSignals = resetSignals;
+
+        function applyLesionPreset() {
+            const presetKey = document.getElementById('lesionPreset')?.value || "";
+            const sev = document.getElementById('lesionSeverity');
+            if (presetKey && lesionPresets[presetKey] && sev && parseInt(sev.value, 10) === 0) {
+                sev.value = lesionPresets[presetKey].defaultSeverity;
+            }
+            updateLesionUI();
+            if (lesionState.nerve) addTimeline(`Applied lesion overlay: ${lesionPresets[lesionState.presetKey].title}`);
+        }
+
+        function runLesionSignal() {
+            updateLesionUI();
+            if (!lesionState.nerve || !nerves[lesionState.nerve]) return;
+            const nerve = nerves[lesionState.nerve];
+            const baseSpeed = parseInt(document.getElementById('signalSpeed').value || "50", 10);
+            const slowed = Math.max(2, baseSpeed * (1 - lesionState.severity / 100 * 0.68));
+            signals.push(new Signal(nerve.path, nerve.color, slowed, false, 'motor'));
+            updateSignalInfo(`Affected conduction: ${nerve.name}`, slowed.toFixed(1));
+            addTimeline(`Ran affected signal on ${nerve.name} at ${slowed.toFixed(1)} m/s`);
+        }
+
+        function updateConductionLab() {
+            const fiberName = document.getElementById('fiberType')?.value || "Aβ touch";
+            const distance = parseFloat(document.getElementById('pathDistance')?.value || "0.8");
+            const profile = fiberProfiles[fiberName];
+            const severity = lesionState.severity || 0;
+            const effectiveSpeed = Math.max(0.4, profile.speed * (1 - severity / 100 * 0.35));
+            const latencyMs = distance / effectiveSpeed * 1000;
+            document.getElementById('distanceVal').textContent = distance.toFixed(2);
+            document.getElementById('latencyMetric').textContent = `${latencyMs.toFixed(latencyMs < 20 ? 1 : 0)} ms`;
+            document.getElementById('velocityMetric').textContent = `${effectiveSpeed.toFixed(effectiveSpeed < 10 ? 1 : 0)} m/s`;
+            document.getElementById('fiberRole').textContent = profile.role;
+            document.getElementById('myelinMetric').textContent = profile.myelin;
+        }
+
+        function newQuizQuestion() {
+            currentQuiz = quizBank[Math.floor(Math.random() * quizBank.length)];
+            document.getElementById('quizQuestion').innerHTML = `<strong>${currentQuiz.q}</strong>`;
+            const shuffled = [...currentQuiz.options].sort(() => Math.random() - 0.5);
+            document.getElementById('quizOptions').innerHTML = shuffled.map(option => `<button class="quiz-option" type="button" data-answer="${option}">${option}</button>`).join('');
+            document.getElementById('quizFeedback').textContent = "Choose an answer.";
+            document.querySelectorAll('.quiz-option').forEach(btn => btn.addEventListener('click', () => {
+                const ok = btn.dataset.answer === currentQuiz.a;
+                document.getElementById('quizFeedback').innerHTML = ok ? `<span class="risk-low">Correct.</span> ${currentQuiz.a}` : `<span class="risk-high">Not quite.</span> Correct answer: ${currentQuiz.a}`;
+                addTimeline(ok ? `Quiz correct: ${currentQuiz.a}` : `Quiz reviewed: ${currentQuiz.a}`);
+            }));
+        }
+
+        function showMnemonic() {
+            const key = selectedNerve || "median";
+            const meta = advancedNerveMeta[key];
+            document.getElementById('quizFeedback').innerHTML = `<strong>${nerves[key].name}:</strong> ${meta.mnemonic}`;
+        }
+
+        function buildCaseNote() {
+            const lesion = lesionState.presetKey ? lesionPresets[lesionState.presetKey] : null;
+            return {
+                app: "Advanced Arm Nervous System Simulation",
+                selectedNerve: selectedNerveName(),
+                viewMode,
+                activeLayers: {...layers},
+                signalSpeed: document.getElementById('signalSpeed')?.value,
+                signalIntensity: document.getElementById('signalIntensity')?.value,
+                lesion: lesion ? {
+                    preset: lesion.title,
+                    severityPercent: lesionState.severity,
+                    affectedNerve: nerves[lesion.nerve].name,
+                    sensory: lesion.sensory,
+                    motor: lesion.motor
+                } : null,
+                educationDisclaimer: "Teaching note only; not a clinical diagnosis.",
+                timestamp: new Date().toISOString()
+            };
+        }
+
+        async function copyCaseNote() {
+            const text = JSON.stringify(buildCaseNote(), null, 2);
+            try {
+                await navigator.clipboard.writeText(text);
+                addTimeline("Copied case note to clipboard");
+            } catch (err) {
+                addTimeline("Clipboard blocked; downloaded or copy manually");
+                console.warn(err);
+            }
+        }
+
+        function downloadCaseNote() {
+            const blob = new Blob([JSON.stringify(buildCaseNote(), null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'arm-nerve-simulation-case-note.json';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+            addTimeline("Downloaded case note JSON");
+        }
+
+        function bindAdvancedEvents() {
+            buildQuickChips();
+
+            const fiberSelect = document.getElementById('fiberType');
+            if (fiberSelect) {
+                fiberSelect.innerHTML = Object.keys(fiberProfiles).map(k => `<option value="${k}">${k}</option>`).join('');
+                fiberSelect.value = "Aβ touch";
+            }
+
+            document.getElementById('nerveSearch')?.addEventListener('input', e => runSmartFinder(e.target.value));
+            document.getElementById('clearSearch')?.addEventListener('click', () => {
+                const input = document.getElementById('nerveSearch');
+                input.value = "";
+                runSmartFinder("");
+            });
+            document.getElementById('lesionPreset')?.addEventListener('change', applyLesionPreset);
+            document.getElementById('lesionSeverity')?.addEventListener('input', () => {
+                updateLesionUI();
+                updateConductionLab();
+            });
+            document.getElementById('applyLesion')?.addEventListener('click', applyLesionPreset);
+            document.getElementById('runLesionSignal')?.addEventListener('click', runLesionSignal);
+            document.getElementById('fiberType')?.addEventListener('change', updateConductionLab);
+            document.getElementById('pathDistance')?.addEventListener('input', updateConductionLab);
+            document.getElementById('newQuiz')?.addEventListener('click', newQuizQuestion);
+            document.getElementById('showMnemonic')?.addEventListener('click', showMnemonic);
+            document.getElementById('copyCaseNote')?.addEventListener('click', copyCaseNote);
+            document.getElementById('downloadCaseNote')?.addEventListener('click', downloadCaseNote);
+            document.getElementById('toggleContrast')?.addEventListener('click', () => {
+                document.body.classList.toggle('high-contrast');
+                addTimeline(`High contrast ${document.body.classList.contains('high-contrast') ? 'enabled' : 'disabled'}`);
+            });
+            document.getElementById('toggleReducedMotion')?.addEventListener('click', () => {
+                reducedMotion = !reducedMotion;
+                addTimeline(`Reduced motion ${reducedMotion ? 'enabled' : 'disabled'}`);
+            });
+
+            canvas.addEventListener('click', () => setTimeout(() => updateClinicalLens(selectedNerve), 0));
+            document.addEventListener('keydown', (e) => {
+                if (e.target && ["INPUT", "TEXTAREA", "SELECT"].includes(e.target.tagName)) return;
+                if (e.key.toLowerCase() === "f") document.getElementById('nerveSearch')?.focus();
+                if (e.key.toLowerCase() === "r") triggerReflex();
+                if (e.key.toLowerCase() === "s") triggerSensory();
+                if (e.key.toLowerCase() === "h") document.getElementById('toggleContrast')?.click();
+            });
+
+            updateConductionLab();
+            updateClinicalLens(null);
+            newQuizQuestion();
+            addTimeline("Advanced upgrade loaded");
+        }
+
+        addUpgradeChrome();
+        addAdvancedPanels();
+        bindAdvancedEvents();
+
     </script>
 </body>
 </html>
